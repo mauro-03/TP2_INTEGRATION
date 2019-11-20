@@ -109,6 +109,14 @@ class GumballMachine
 	    
 	}
 
+	public function GetIdC($intitule)
+    	{
+    	    $stmt = $this->bdd->prepare("select id from cours where intitule = ?);
+    	    $stmt->execute([$intitule]);
+    	    $user = $stmt->fetch();
+    	    return $user['id'];
+    	}
+
 	public function GetLastIDC()
     	{
     	    $stmt = $this->bdd->prepare("select max(id) as maximum from cours");
@@ -117,11 +125,39 @@ class GumballMachine
     	    return $user['maximum'];
     	}
 	
-	public function UpdateP()
+	public function UpdateP($col, $value, $nom, $prenom)
 	{
-	    
+	    try
+        	    {
+        	        $this->bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        	        $sql = "UPDATE prof SET '$col' = '$value' WHERE nom = '$nom' AND prenom = '$prenom'";
+        	        $this->bdd->exec($sql);
+        	        return true;
+        	    }
+        	    catch(PDOException $e)
+        	    {
+        	        echo $sql . "<br>" . $e->getMessage();
+        	        return false;
+        	    }
 	}
-	
+
+	public function UpdateC($col, $value, $intitule)
+    	{
+    	    try
+            	    {
+            	        $this->bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            	        $idProf->this.getIdP($nom, $prenom)
+            	        $sql = "UPDATE prof SET '$col' = '$value' WHERE intitule = $intitule";
+            	        $this->bdd->exec($sql);
+            	        return true;
+            	    }
+            	    catch(PDOException $e)
+            	    {
+            	        echo $sql . "<br>" . $e->getMessage();
+            	        return false;
+            	    }
+    	}
+
 	public function DeleteP()
 	{
 	    
