@@ -154,7 +154,7 @@ class GumballMachine
     public function getDuree($intitule)
     {
         $stmt = $this->bdd->prepare("select duree from cours where nom=? intitule = '$intitule'");
-        	    $stmt->execute([$nom,$prenom]);
+        	    $stmt->execute([$intitule]);
         	    $user = $stmt->fetch();
         	    return $user['duree'];
     }
