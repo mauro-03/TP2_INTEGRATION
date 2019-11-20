@@ -9,7 +9,7 @@ class GumballMachine
 	/* Param�tre de connexion � la base de donn�es*/
 	private $servername="localhost";
 	private $db_name="mydb6"; //a remplir
-	private $db_user="mysuer6"; //a remplir
+	private $db_user="myuser6"; //a remplir
 	private $db_pass="mypassword6"; //a remplir
 	
 	
