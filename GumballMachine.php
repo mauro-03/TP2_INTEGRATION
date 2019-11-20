@@ -140,7 +140,7 @@ class GumballMachine
             	    {
             	        $this->bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             	        //$idProf->this.getIdP($nom, $prenom)
-            	        $sql = "UPDATE prof SET '$col' = '$value' WHERE intitule = '$intitule'";
+            	        $sql = "UPDATE cours SET '$col' = '$value' WHERE intitule = '$intitule'";
             	        $this->bdd->exec($sql);
             	        return true;
             	    }
