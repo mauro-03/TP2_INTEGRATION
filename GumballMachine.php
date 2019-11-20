@@ -114,7 +114,7 @@ class GumballMachine
     	    $stmt = $this->bdd->prepare("select id from cours where intitule = ?);
     	    $stmt->execute([$intitule]);
     	    $user = $stmt->fetch();
-    	    return $user['id'];
+    	    return $user[$intitule];
     	}
 
 	public function GetLastIDC()
