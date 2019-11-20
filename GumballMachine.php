@@ -153,7 +153,7 @@ class GumballMachine
 
     public function getDuree($intitule)
     {
-        $stmt = $this->bdd->prepare("select duree from cours where nom=? intitule = '$intitule'");
+        $stmt = $this->bdd->prepare("select duree from cours where intitule = '$intitule'");
         	    $stmt->execute([$intitule]);
         	    $user = $stmt->fetch();
         	    return $user['duree'];
