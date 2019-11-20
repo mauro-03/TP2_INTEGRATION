@@ -109,13 +109,6 @@ class GumballMachine
 	    
 	}
 
-	public function GetIdC($intitule)
-    	{
-    	    $stmt = $this->bdd->prepare("select id from cours where intitule = ?);
-    	    $stmt->execute([$intitule]);
-    	    $user = $stmt->fetch();
-    	    return $user[$intitule];
-    	}
 
 	public function GetLastIDC()
     	{
